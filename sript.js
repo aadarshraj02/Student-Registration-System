@@ -88,7 +88,7 @@ function updateStudent(id){
     
     arrayStudents[tempId] = studentObject;
     localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents));
-    
+    displayInfos()
 }
 
 displayInfos()
