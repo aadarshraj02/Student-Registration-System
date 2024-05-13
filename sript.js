@@ -15,6 +15,7 @@ submit.addEventListener('click',(e)=>{
     }
     arrayStudents.push(studentObject);
     console.log(arrayStudents);
+    displayInfos()
     e.preventDefault();
 })
 
@@ -36,3 +37,5 @@ function displayInfos(){
         `
     }
 }
+
+displayInfos()
