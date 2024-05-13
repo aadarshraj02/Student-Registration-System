@@ -21,6 +21,18 @@ submit.addEventListener('click',(e)=>{
 function displayInfos(){
     let table = '';
     for( let index = 0; index < arrayStudents.length; index++){
-
+        table += `
+        <tr>
+              <th scope="row">${index}</th>
+              <td>${arrayStudents[index].studentId}</td>
+              <td>${arrayStudents[index].studentName}</td>
+              <td>${arrayStudents[index].email}</td>
+              <td>${arrayStudents[index].phone}</td>
+              <td>
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+        `
     }
 }
