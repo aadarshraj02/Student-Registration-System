@@ -35,6 +35,7 @@ function displayInfos(){
               </td>
             </tr>
         `
+        document.getElementById('tbody')
     }
 }
 
