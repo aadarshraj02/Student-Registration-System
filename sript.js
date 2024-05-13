@@ -57,7 +57,8 @@ function clearText(){
 
 function deleteStudent(id){
     arrayStudents.splice(id,1)
-    localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents))
+    localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents));
+    displayInfos();
 }
 
 displayInfos()
