@@ -21,6 +21,7 @@ submit.addEventListener('click',(e)=>{
         phone : phone.value,
     }
     arrayStudents.push(studentObject);
+    localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents))
     console.log(arrayStudents);
     displayInfos()
     clearText()
