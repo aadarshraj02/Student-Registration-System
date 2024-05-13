@@ -86,7 +86,9 @@ function updateStudent(id){
     email.value = arrayStudents[id].email;
     phone.value = arrayStudents[id].phone;
     
-    arrayStudents[tempId] = studentObject
+    arrayStudents[tempId] = studentObject;
+    localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents));
+    
 }
 
 displayInfos()
