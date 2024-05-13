@@ -4,6 +4,8 @@ var email = document.getElementById('email');
 var phone = document.getElementById('phone');
 var submit = document.getElementById('submit');
 
+var arrayStudents = [];
+
 submit.addEventListener('click',(e)=>{
     let studentObject = {
         studentId : studentId.value,
@@ -11,4 +13,7 @@ submit.addEventListener('click',(e)=>{
         email : email.value,
         phone : phone.value,
     }
+    arrayStudents.push(studentObject);
+    console.log(arrayStudents);
+    e.preventDefault();
 })
