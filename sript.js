@@ -39,7 +39,7 @@ function displayInfos(){
               <td>${arrayStudents[index].email}</td>
               <td>${arrayStudents[index].phone}</td>
               <td>
-                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-warning" onclick = "updateStudent(${index})>Edit</button>
                 <button class="btn btn-danger" onclick = "deleteStudent(${index})">Delete</button>
               </td>
             </tr>
@@ -62,7 +62,7 @@ function deleteStudent(id){
 }
 
 function updateStudent(id){
-    
+
 }
 
 displayInfos()
