@@ -61,4 +61,8 @@ function deleteStudent(id){
     displayInfos();
 }
 
+function updateStudent(id){
+    
+}
+
 displayInfos()
