@@ -24,6 +24,10 @@ submit.addEventListener('click',(e)=>{
             email : email.value,
             phone : phone.value,
         }
+        if(studentName.value == "") return;
+        if(studentId.value == "") return;
+        if(email.value == "") return;
+        if(phone.value == "") return;
         arrayStudents.push(studentObject);
         localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents))
         
