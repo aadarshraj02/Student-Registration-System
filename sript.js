@@ -6,6 +6,8 @@ var submit = document.getElementById('submit');
 
 var arrayStudents = [];
 
+var flag = 'create'
+
 if(localStorage.arrayStudents != null){
     arrayStudents = JSON.parse(localStorage.getItem('arrayStudents'))
 }
