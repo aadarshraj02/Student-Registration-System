@@ -35,7 +35,7 @@ function displayInfos(){
               </td>
             </tr>
         `
-        document.getElementById('tbody')
+        document.getElementById('tbody').innerHTML = table;
     }
 }
 
