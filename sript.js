@@ -55,8 +55,8 @@ function clearText(){
     phone.value = "";
 }
 
-function deleteStudent(){
-
+function deleteStudent(id){
+    arrayStudents.splice(id,1)
 }
 
 displayInfos()
