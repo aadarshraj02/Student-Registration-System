@@ -72,12 +72,21 @@ function deleteStudent(id){
 }
 
 function updateStudent(id){
+    tempId = id;
     flag = 'update';
     submit.innerHTML = "Update"
+    let studentObject = {
+        studentId : studentId.value,
+        studentName : studentName.value,
+        email : email.value,
+        phone : phone.value,
+    }
     studentId.value = arrayStudents[id].studentId;
     studentName.value = arrayStudents[id].studentName;
     email.value = arrayStudents[id].email;
     phone.value = arrayStudents[id].phone;
+    
+    arrayStudents[tempId] = studentObject
 }
 
 displayInfos()
