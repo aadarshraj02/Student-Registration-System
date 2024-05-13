@@ -1,20 +1,23 @@
+// Selected elements here and stored in new variables
 var studentId = document.getElementById("studentId");
 var studentName = document.getElementById("studentName");
 var email = document.getElementById("email");
 var phone = document.getElementById("phone");
 var submit = document.getElementById("submit");
 
-var arrayStudents = [];
+var arrayStudents = []; //Empty array to store student object data
 
-var flag = "create";
-var tempId;
+var flag = "create"; //to change register button
+var tempId; //to use as temporary id to store table data
 
+// to check local storage for adding array of student
 if (localStorage.arrayStudents != null) {
   arrayStudents = JSON.parse(localStorage.getItem("arrayStudents"));
 } else {
   arrayStudents = [];
 }
 
+// Event listener and functionality on submit button
 submit.addEventListener("click", (e) => {
   if (flag === "create") {
     let studentObject = {
@@ -27,8 +30,8 @@ submit.addEventListener("click", (e) => {
     if (studentId.value == "") return;
     if (email.value == "") return;
     if (phone.value == "") return;
-    arrayStudents.push(studentObject);
-    localStorage.setItem("arrayStudents", JSON.stringify(arrayStudents));
+    arrayStudents.push(studentObject); //push student obj in student arr
+    localStorage.setItem("arrayStudents", JSON.stringify(arrayStudents)); //store data in local storage
 
     displayInfos();
     clearText();
@@ -44,6 +47,8 @@ submit.addEventListener("click", (e) => {
   e.preventDefault();
 });
 
+
+//Display info of array and store in table
 function displayInfos() {
   let table = "";
   for (let index = 1; index < arrayStudents.length; index++) {
@@ -64,6 +69,7 @@ function displayInfos() {
   }
 }
 
+//to clear text after filling the form
 function clearText() {
   studentId.value = "";
   studentName.value = "";
