@@ -26,7 +26,6 @@ submit.addEventListener('click',(e)=>{
         }
         arrayStudents.push(studentObject);
         localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents))
-        console.log(arrayStudents);
         displayInfos()
         clearText()
     }
@@ -93,5 +92,3 @@ function updateStudent(id){
     localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents));
    
 }
-
-displayInfos()
