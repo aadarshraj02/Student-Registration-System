@@ -16,6 +16,7 @@ submit.addEventListener('click',(e)=>{
     arrayStudents.push(studentObject);
     console.log(arrayStudents);
     displayInfos()
+    clearText()
     e.preventDefault();
 })
 
@@ -38,5 +39,13 @@ function displayInfos(){
         document.getElementById('tbody').innerHTML = table;
     }
 }
+
+function clearText(){
+    studentId.value = "";
+    studentName.value = "";
+    email.value = "";
+    phone.value = "";
+}
+
 
 displayInfos()
