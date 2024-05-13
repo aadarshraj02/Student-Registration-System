@@ -16,17 +16,23 @@ else{
 }
 
 submit.addEventListener('click',(e)=>{
-    let studentObject = {
-        studentId : studentId.value,
-        studentName : studentName.value,
-        email : email.value,
-        phone : phone.value,
+    if(flag === 'create'){
+        let studentObject = {
+            studentId : studentId.value,
+            studentName : studentName.value,
+            email : email.value,
+            phone : phone.value,
+        }
+        arrayStudents.push(studentObject);
+        localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents))
+        console.log(arrayStudents);
+        displayInfos()
+        clearText()
     }
-    arrayStudents.push(studentObject);
-    localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents))
-    console.log(arrayStudents);
-    displayInfos()
-    clearText()
+    else{
+        submit.innerHTML = "Update"
+    }
+   
     e.preventDefault();
 })
 
