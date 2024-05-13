@@ -2,6 +2,7 @@
 
 *{
     font-family: poppins;
+
 }
 
 
@@ -10,4 +11,9 @@
         height: 300px;
         overflow-x: auto;
     
+}
+
+body{
+    background: #888383;
+    color: rgb(0, 0, 0);
 }
