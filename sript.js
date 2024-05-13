@@ -6,6 +6,13 @@ var submit = document.getElementById('submit');
 
 var arrayStudents = [];
 
+if(localStorage.arrayStudents != null){
+    arrayStudents = JSON.parse(localStorage.getItem('arrayStudents'))
+}
+else{
+    arrayStudents = []
+}
+
 submit.addEventListener('click',(e)=>{
     let studentObject = {
         studentId : studentId.value,
