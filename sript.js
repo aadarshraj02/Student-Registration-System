@@ -33,6 +33,9 @@ submit.addEventListener('click',(e)=>{
     else{
         submit.innerHTML = "Update"
         updateStudent(tempId);
+        displayInfos()
+        submit.innerHTML = 'Register'
+        flag = 'create';
     }
    
     e.preventDefault();
@@ -88,7 +91,7 @@ function updateStudent(id){
     
     arrayStudents[tempId] = studentObject;
     localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents));
-    displayInfos()
+   
 }
 
 displayInfos()
