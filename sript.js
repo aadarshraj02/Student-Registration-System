@@ -1,55 +1,53 @@
-var studentId = document.getElementById('studentId');
-var studentName =document.getElementById('studentName');
-var email = document.getElementById('email');
-var phone = document.getElementById('phone');
-var submit = document.getElementById('submit');
+var studentId = document.getElementById("studentId");
+var studentName = document.getElementById("studentName");
+var email = document.getElementById("email");
+var phone = document.getElementById("phone");
+var submit = document.getElementById("submit");
 
 var arrayStudents = [];
 
-var flag = 'create'
+var flag = "create";
 var tempId;
 
-if(localStorage.arrayStudents != null){
-    arrayStudents = JSON.parse(localStorage.getItem('arrayStudents'))
-}
-else{
-    arrayStudents = []
+if (localStorage.arrayStudents != null) {
+  arrayStudents = JSON.parse(localStorage.getItem("arrayStudents"));
+} else {
+  arrayStudents = [];
 }
 
-submit.addEventListener('click',(e)=>{
-    if(flag === 'create'){
-        let studentObject = {
-            studentId : studentId.value,
-            studentName : studentName.value,
-            email : email.value,
-            phone : phone.value,
-        }
-        if(studentName.value == "") return;
-        if(studentId.value == "") return;
-        if(email.value == "") return;
-        if(phone.value == "") return;
-        arrayStudents.push(studentObject);
-        localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents))
-        
-        displayInfos()
-        clearText()
-        emptyData()
-    }
-    else{
-        submit.innerHTML = "Update"
-        updateStudent(tempId);
-        displayInfos()
-        submit.innerHTML = 'Register'
-        flag = 'create';
-    }
-   
-    e.preventDefault();
-})
+submit.addEventListener("click", (e) => {
+  if (flag === "create") {
+    let studentObject = {
+      studentId: studentId.value,
+      studentName: studentName.value,
+      email: email.value,
+      phone: phone.value,
+    };
+    if (studentName.value == "") return;
+    if (studentId.value == "") return;
+    if (email.value == "") return;
+    if (phone.value == "") return;
+    arrayStudents.push(studentObject);
+    localStorage.setItem("arrayStudents", JSON.stringify(arrayStudents));
 
-function displayInfos(){
-    let table = '';
-    for( let index = 1; index < arrayStudents.length; index++){
-        table += `
+    displayInfos();
+    clearText();
+    emptyData();
+  } else {
+    submit.innerHTML = "Update";
+    updateStudent(tempId);
+    displayInfos();
+    submit.innerHTML = "Register";
+    flag = "create";
+  }
+
+  e.preventDefault();
+});
+
+function displayInfos() {
+  let table = "";
+  for (let index = 1; index < arrayStudents.length; index++) {
+    table += `
         <tr>
               <th scope="row">${index}</th>
               <td>${arrayStudents[index].studentId}</td>
@@ -61,42 +59,41 @@ function displayInfos(){
                 <button class="btn btn-danger" onclick = "deleteStudent(${index})">Delete</button>
               </td>
             </tr>
-        `
-        document.getElementById('tbody').innerHTML = table;
-    }
+        `;
+    document.getElementById("tbody").innerHTML = table;
+  }
 }
 
-function clearText(){
-    studentId.value = "";
-    studentName.value = "";
-    email.value = "";
-    phone.value = "";
+function clearText() {
+  studentId.value = "";
+  studentName.value = "";
+  email.value = "";
+  phone.value = "";
 }
 
-function deleteStudent(id){
-    arrayStudents.splice(id,1)
-    localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents));
-    displayInfos();
+function deleteStudent(id) {
+  arrayStudents.splice(id, 1);
+  localStorage.setItem("arrayStudents", JSON.stringify(arrayStudents));
+  displayInfos();
 }
 
-function updateStudent(id){
-    tempId = id;
-    flag = 'update';
-    submit.innerHTML = "Update"
-    let studentObject = {
-        studentId : studentId.value,
-        studentName : studentName.value,
-        email : email.value,
-        phone : phone.value,
-    }
-    studentId.value = arrayStudents[id].studentId;
-    studentName.value = arrayStudents[id].studentName;
-    email.value = arrayStudents[id].email;
-    phone.value = arrayStudents[id].phone;
-    
-    arrayStudents[tempId] = studentObject;
-    localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents));
-   
+function updateStudent(id) {
+  tempId = id;
+  flag = "update";
+  submit.innerHTML = "Update";
+  let studentObject = {
+    studentId: studentId.value,
+    studentName: studentName.value,
+    email: email.value,
+    phone: phone.value,
+  };
+  studentId.value = arrayStudents[id].studentId;
+  studentName.value = arrayStudents[id].studentName;
+  email.value = arrayStudents[id].email;
+  phone.value = arrayStudents[id].phone;
+
+  arrayStudents[tempId] = studentObject;
+  localStorage.setItem("arrayStudents", JSON.stringify(arrayStudents));
 }
 
-displayInfos()
+displayInfos();
