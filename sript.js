@@ -30,7 +30,7 @@ submit.addEventListener('click',(e)=>{
 
 function displayInfos(){
     let table = '';
-    for( let index = 0; index < arrayStudents.length; index++){
+    for( let index = 1; index < arrayStudents.length; index++){
         table += `
         <tr>
               <th scope="row">${index}</th>
@@ -40,7 +40,7 @@ function displayInfos(){
               <td>${arrayStudents[index].phone}</td>
               <td>
                 <button class="btn btn-warning">Edit</button>
-                <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-danger" onclick = "deleteStudent(${index})">Delete</button>
               </td>
             </tr>
         `
