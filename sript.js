@@ -26,8 +26,10 @@ submit.addEventListener('click',(e)=>{
         }
         arrayStudents.push(studentObject);
         localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents))
+        
         displayInfos()
         clearText()
+        emptyData()
     }
     else{
         submit.innerHTML = "Update"
@@ -92,3 +94,5 @@ function updateStudent(id){
     localStorage.setItem('arrayStudents',JSON.stringify(arrayStudents));
    
 }
+
+displayInfos()
