@@ -55,5 +55,8 @@ function clearText(){
     phone.value = "";
 }
 
+function deleteStudent(){
+
+}
 
 displayInfos()
