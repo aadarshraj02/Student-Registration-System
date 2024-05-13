@@ -7,6 +7,7 @@ var submit = document.getElementById('submit');
 var arrayStudents = [];
 
 var flag = 'create'
+var tempId;
 
 if(localStorage.arrayStudents != null){
     arrayStudents = JSON.parse(localStorage.getItem('arrayStudents'))
@@ -31,6 +32,7 @@ submit.addEventListener('click',(e)=>{
     }
     else{
         submit.innerHTML = "Update"
+        updateStudent(tempId);
     }
    
     e.preventDefault();
@@ -38,7 +40,7 @@ submit.addEventListener('click',(e)=>{
 
 function displayInfos(){
     let table = '';
-    for( let index = 0; index < arrayStudents.length; index++){
+    for( let index = 1; index < arrayStudents.length; index++){
         table += `
         <tr>
               <th scope="row">${index}</th>
@@ -70,6 +72,8 @@ function deleteStudent(id){
 }
 
 function updateStudent(id){
+    flag = 'update';
+    submit.innerHTML = "Update"
     studentId.value = arrayStudents[id].studentId;
     studentName.value = arrayStudents[id].studentName;
     email.value = arrayStudents[id].email;
