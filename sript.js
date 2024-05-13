@@ -4,6 +4,11 @@ var email = document.getElementById('email');
 var phone = document.getElementById('phone');
 var submit = document.getElementById('submit');
 
-submit.addEventListener('click',()=>{
-    
+submit.addEventListener('click',(e)=>{
+    let studentObject = {
+        studentId : studentId.value,
+        studentName : studentName.value,
+        email : email.value,
+        phone : phone.value,
+    }
 })
