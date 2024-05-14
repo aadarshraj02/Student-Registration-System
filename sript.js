@@ -35,7 +35,6 @@ submit.addEventListener("click", (e) => {
 
     displayInfos();
     clearText();
-    emptyData();
   } else {
     submit.innerHTML = "Update";
     updateStudent(tempId);
